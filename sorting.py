@@ -2,7 +2,7 @@ import random
 import matplotlib.pyplot as plt
 def random_numbers(count, low=0, high=100):
     return [random.randint(low, high) for _ in range(count)]
-values = random_numbers(10)
+values = random_numbers(50, 0, 100)
 print(values)
 
 small = random_numbers(5, low=0, high=20)  # 5 čísel v rozsahu 0–20
@@ -54,19 +54,6 @@ def bubble_sort(values):
 values = random_numbers(20)
 print("Povodny zoznam", values)
 print("Zoradeny zoznam", bubble_sort(selection_sort(values)))
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
