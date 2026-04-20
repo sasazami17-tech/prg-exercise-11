@@ -86,4 +86,4 @@ results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
 
 print(results.find_sorted(91))   # sorting…  → index 7
 print(results.find_sorted(50))   # → index 2 (už neřadí)
-print(results.find_sorted(77))   # → None  (77 tam není)
+print(results.find_sorted(77))
