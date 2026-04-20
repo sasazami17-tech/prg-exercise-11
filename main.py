@@ -1,77 +1,26 @@
+from students_grades import StudentsGrades
 def main():
-    print("Hello from prg-exercise-11!")
+    results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
+    print("Počet študentov:", results.count())
+    for i in range(results.count()):
+        pocet_bodov = results.get_by_index(i)
+        znamka = results.get_grade(i)
+        print(f"Študent {i}: {pocet_bodov} body – {znamka}")
+        print("Študenti so sto bodmi:", results.find(100))
+        print("Zoradene vysledky:", results.get_sorted())
+        print("Podovne zaznamy:", results.scores)
+    results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
 
+    results.plot_histogram()
+
+
+from sorting import random_numbers
+
+random_results = StudentsGrades(random_numbers(30, 0, 100))
+print(random_results.count())
+print(random_results.get_sorted())
 
 if __name__ == "__main__":
     main()
-import random
-
-def random_numbers(count, low=0, high=100):
-    return [random.randint(low, high) for _ in range(count)]
-values = random_numbers(10)
-print(values)
-
-small = random_numbers(5, low=0, high=20)  # 5 čísel v rozsahu 0–20
-
-def selection_sort(values):
-    values = values[:]
-    for pozicia in range(len(values)):
-        min = pozicia
-        for prechadzanie in range(pozicia + 1, len(values)):
-            if values[prechadzanie] < values[min]:
-                min = prechadzanie
-
-        values[pozicia], values[min] = values[min], values[pozicia]
-    return values
 
 
-values = [15, 2, 6,7, 13, 0, 22]
-print("Povodny zoznam:", values)
-print("Zoradeny zoznam:", selection_sort(values))
-
-
-
-
-
-
-
-
-
-
-
-
-    # values = values.copy()
-    # n = len(values)
-    # for i in range(n):
-    #     min = i
-    #     for k in range(i+1, n):
-    #         if values[k] <values[min]:
-    #             min = k
-    #     values[i], values[min] = values[min], values[i]
-    # return values
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    #
-    #
-    #
-    # data = [5, 1, 4, 2, 8]
-    # print("Původní:", data)
-    # print("Seřazený:", selection_sort(data))
-    # print("Po zavolání (kontrola):", data)
-    # print()
-    #
-    # print("Náhodný seznam:", rnd)
-    # print("Seřazený:", selection_sort(rnd))
